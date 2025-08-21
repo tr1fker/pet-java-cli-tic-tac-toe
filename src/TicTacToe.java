@@ -8,7 +8,7 @@ public class TicTacToe {
 
         boolean moveX = false;
 
-        while(!gameHandler.haveWinner(field)){
+        while(!gameHandler.haveWinner(field) && !gameHandler.isDraw(field)){
             outputHandler.showField(field);
 
             System.out.print("Ход " + ((moveX = !moveX) ? "X" : "O") + " ");
@@ -18,6 +18,6 @@ public class TicTacToe {
         }
 
         outputHandler.showField(field);
-        System.out.println("Победил " + (moveX ? "X" : "O"));
+        System.out.println(gameHandler.isDraw(field) ? "Ничья!" : ("Победил " + (moveX ? "X" : "O")));
     }
 }
