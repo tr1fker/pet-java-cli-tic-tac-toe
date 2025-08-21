@@ -2,7 +2,10 @@ public class OutputHandler {
     public void showField(int[][] field){
         for (int _row =  0; _row < 3; ++_row){
             for (int _col =  0; _col < 3; ++_col){
-                System.out.print(field[_row][_col]);
+                if (field[_row][_col] > 78)
+                    System.out.print((char)field[_row][_col]);
+                else
+                    System.out.print(field[_row][_col]);
                 if (_col != 2)
                     System.out.print("|");
             }
